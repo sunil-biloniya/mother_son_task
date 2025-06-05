@@ -95,3 +95,4 @@ private struct FavoriteMovieCard: View {
         .buttonStyle(PlainButtonStyle())
     }
 }
+ 

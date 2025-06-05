@@ -54,20 +54,20 @@ struct SearchBar: View {
     
     var body: some View {
         HStack {
-            HStack {
-                Image(systemName: "magnifyingglass")
-                    .foregroundColor(.gray)
+        HStack {
+            Image(systemName: "magnifyingglass")
+                .foregroundColor(.gray)
                     .font(.system(size: 18, weight: .medium))
-                
-                TextField(Constants.Navigation.searchPlaceholder, text: $text)
-                    .onChange(of: text) { _, newValue in
-                        onTextChange(newValue)
-                    }
-                
-                if !text.isEmpty {
-                    Button(action: { text = "" }) {
-                        Image(systemName: "xmark.circle.fill")
-                            .foregroundColor(.gray)
+            
+            TextField(Constants.Navigation.searchPlaceholder, text: $text)
+                .onChange(of: text) { _, newValue in
+                    onTextChange(newValue)
+                }
+            
+            if !text.isEmpty {
+                Button(action: { text = "" }) {
+                    Image(systemName: "xmark.circle.fill")
+                        .foregroundColor(.gray)
                             .font(.system(size: 18))
                     }
                 }
@@ -246,8 +246,8 @@ struct MovieInfo: View {
                 Spacer()
                 
                 if let onFavoriteToggle = onFavoriteToggle {
-                    FavoriteButton(isFavorite: isFavorite, onToggle: onFavoriteToggle)
-                        .buttonStyle(BorderlessButtonStyle())
+                FavoriteButton(isFavorite: isFavorite, onToggle: onFavoriteToggle)
+                    .buttonStyle(BorderlessButtonStyle())
                 }
             }
             

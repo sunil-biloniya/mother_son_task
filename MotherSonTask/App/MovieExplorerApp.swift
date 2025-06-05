@@ -36,7 +36,7 @@ struct MovieExplorerApp: App {
     var body: some Scene {
         WindowGroup {
             TabView {
-                MovieListView(repository: movieRepository)
+            MovieListView(repository: movieRepository)
                     .tabItem {
                         Label(Constants.Navigation.moviesTitle, systemImage: "film")
                     }
