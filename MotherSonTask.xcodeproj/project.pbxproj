@@ -6,8 +6,19 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		CB7A291B2DF228000041BC74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB528BCD2DF0B2390048551F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB528BD42DF0B2390048551F;
+			remoteInfo = MotherSonTask;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		CB528BD52DF0B2390048551F /* MotherSonTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotherSonTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB7A29172DF228000041BC74 /* MotherSonTaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MotherSonTaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -16,10 +27,22 @@
 			path = MotherSonTask;
 			sourceTree = "<group>";
 		};
+		CB7A29182DF228000041BC74 /* MotherSonTaskTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MotherSonTaskTests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		CB528BD22DF0B2390048551F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB7A29142DF228000041BC74 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				CB528BD72DF0B2390048551F /* MotherSonTask */,
+				CB7A29182DF228000041BC74 /* MotherSonTaskTests */,
 				CB528BD62DF0B2390048551F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				CB528BD52DF0B2390048551F /* MotherSonTask.app */,
+				CB7A29172DF228000041BC74 /* MotherSonTaskTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,6 +95,29 @@
 			productReference = CB528BD52DF0B2390048551F /* MotherSonTask.app */;
 			productType = "com.apple.product-type.application";
 		};
+		CB7A29162DF228000041BC74 /* MotherSonTaskTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB7A291D2DF228000041BC74 /* Build configuration list for PBXNativeTarget "MotherSonTaskTests" */;
+			buildPhases = (
+				CB7A29132DF228000041BC74 /* Sources */,
+				CB7A29142DF228000041BC74 /* Frameworks */,
+				CB7A29152DF228000041BC74 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB7A291C2DF228000041BC74 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				CB7A29182DF228000041BC74 /* MotherSonTaskTests */,
+			);
+			name = MotherSonTaskTests;
+			packageProductDependencies = (
+			);
+			productName = MotherSonTaskTests;
+			productReference = CB7A29172DF228000041BC74 /* MotherSonTaskTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -82,6 +130,10 @@
 				TargetAttributes = {
 					CB528BD42DF0B2390048551F = {
 						CreatedOnToolsVersion = 16.2;
+					};
+					CB7A29162DF228000041BC74 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = CB528BD42DF0B2390048551F;
 					};
 				};
 			};
@@ -100,12 +152,20 @@
 			projectRoot = "";
 			targets = (
 				CB528BD42DF0B2390048551F /* MotherSonTask */,
+				CB7A29162DF228000041BC74 /* MotherSonTaskTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CB528BD32DF0B2390048551F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB7A29152DF228000041BC74 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +182,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CB7A29132DF228000041BC74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CB7A291C2DF228000041BC74 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB528BD42DF0B2390048551F /* MotherSonTask */;
+			targetProxy = CB7A291B2DF228000041BC74 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		CB528BE12DF0B23A0048551F /* Debug */ = {
@@ -302,6 +377,42 @@
 			};
 			name = Release;
 		};
+		CB7A291E2DF228000041BC74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ios.MotherSonTaskTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MotherSonTask.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MotherSonTask";
+			};
+			name = Debug;
+		};
+		CB7A291F2DF228000041BC74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ios.MotherSonTaskTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MotherSonTask.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MotherSonTask";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -319,6 +430,15 @@
 			buildConfigurations = (
 				CB528BE42DF0B23A0048551F /* Debug */,
 				CB528BE52DF0B23A0048551F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB7A291D2DF228000041BC74 /* Build configuration list for PBXNativeTarget "MotherSonTaskTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB7A291E2DF228000041BC74 /* Debug */,
+				CB7A291F2DF228000041BC74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -35,7 +35,17 @@ struct MovieExplorerApp: App {
     
     var body: some Scene {
         WindowGroup {
-            MovieListView(repository: movieRepository)
+            TabView {
+                MovieListView(repository: movieRepository)
+                    .tabItem {
+                        Label(Constants.Navigation.moviesTitle, systemImage: "film")
+                    }
+                
+                FavoriteMoviesView(repository: movieRepository)
+                    .tabItem {
+                        Label(Constants.Navigation.favoritesTitle, systemImage: "heart.fill")
+                    }
+            }
         }
         .modelContainer(modelContainer)
     }

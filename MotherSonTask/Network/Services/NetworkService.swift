@@ -7,12 +7,26 @@
 import Foundation
 import Combine
 
-enum NetworkError: Error {
+enum NetworkError: Error, Equatable {
     case invalidURL
     case invalidResponse
     case decodingError
     case serverError(String)
     case noData
+    
+    static func == (lhs: NetworkError, rhs: NetworkError) -> Bool {
+        switch (lhs, rhs) {
+        case (.invalidURL, .invalidURL),
+             (.invalidResponse, .invalidResponse),
+             (.decodingError, .decodingError),
+             (.noData, .noData):
+            return true
+        case (.serverError(let lhsMessage), .serverError(let rhsMessage)):
+            return lhsMessage == rhsMessage
+        default:
+            return false
+        }
+    }
 }
 
 protocol NetworkServiceProtocol {

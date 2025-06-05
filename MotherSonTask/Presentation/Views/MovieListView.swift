@@ -25,10 +25,14 @@ struct MovieListView: View {
                 )
             }
             .navigationTitle(Constants.Navigation.moviesTitle)
+            .navigationBarTitleDisplayMode(.inline)
             .alert("Error", isPresented: .constant(viewModel.error != nil)) {
                 Button("OK") { viewModel.error = nil }
             } message: {
                 Text(viewModel.error?.localizedDescription ?? "")
+            }
+            .onAppear {
+                viewModel.loadFavorites()
             }
         }
     }
@@ -50,21 +54,27 @@ struct SearchBar: View {
     
     var body: some View {
         HStack {
-            Image(systemName: "magnifyingglass")
-                .foregroundColor(.gray)
-            
-            TextField(Constants.Navigation.searchPlaceholder, text: $text)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .onChange(of: text) { _, newValue in
-                    onTextChange(newValue)
-                }
-            
-            if !text.isEmpty {
-                Button(action: { text = "" }) {
-                    Image(systemName: "xmark.circle.fill")
-                        .foregroundColor(.gray)
+            HStack {
+                Image(systemName: "magnifyingglass")
+                    .foregroundColor(.gray)
+                    .font(.system(size: 18, weight: .medium))
+                
+                TextField(Constants.Navigation.searchPlaceholder, text: $text)
+                    .onChange(of: text) { _, newValue in
+                        onTextChange(newValue)
+                    }
+                
+                if !text.isEmpty {
+                    Button(action: { text = "" }) {
+                        Image(systemName: "xmark.circle.fill")
+                            .foregroundColor(.gray)
+                            .font(.system(size: 18))
+                    }
                 }
             }
+            .padding(8)
+            .background(Color(.systemGray6))
+            .cornerRadius(10)
         }
         .padding(.horizontal)
     }
@@ -182,7 +192,7 @@ struct LoadingIndicators: View {
 struct MovieCard: View {
     let movie: Movie
     let isFavorite: Bool
-    let onFavoriteToggle: () -> Void
+    let onFavoriteToggle: (() -> Void)?
     
     var body: some View {
         VStack(alignment: .leading, spacing: Constants.UI.defaultSpacing) {
@@ -225,7 +235,7 @@ struct MovieInfo: View {
     let releaseDate: String
     let voteAverage: Double
     let isFavorite: Bool
-    let onFavoriteToggle: () -> Void
+    let onFavoriteToggle: (() -> Void)?
     
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
@@ -235,8 +245,10 @@ struct MovieInfo: View {
                 
                 Spacer()
                 
-                FavoriteButton(isFavorite: isFavorite, onToggle: onFavoriteToggle)
-                    .buttonStyle(BorderlessButtonStyle())
+                if let onFavoriteToggle = onFavoriteToggle {
+                    FavoriteButton(isFavorite: isFavorite, onToggle: onFavoriteToggle)
+                        .buttonStyle(BorderlessButtonStyle())
+                }
             }
             
             Text(overview)

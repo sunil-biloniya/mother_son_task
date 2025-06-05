@@ -46,6 +46,7 @@ enum Constants {
     enum Navigation {
         static let moviesTitle = "Movies"
         static let searchPlaceholder = "Search movies..."
+        static let favoritesTitle = "Favorites"
     }
     
     // MARK: - Labels
@@ -59,5 +60,6 @@ enum Constants {
         static let noMoreMovies = "No more movies to load"
         static let noMoviesFound = "No movies found"
         static let searchEmpty = "Try searching for a movie"
+        static let noFavorites = "No favorite movies yet"
     }
 } 
